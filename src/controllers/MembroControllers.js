@@ -15,7 +15,7 @@ module.exports = {
             membro = await Membro.create({ nome, sobreNome, email, senha })
             return res.json(membro)
         }
-        return false;
+        return res.json({resposta:"fracasso"});
         
     },
 
