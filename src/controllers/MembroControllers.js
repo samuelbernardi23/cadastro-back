@@ -10,13 +10,13 @@ module.exports = {
 
 
         let membro = await Membro.findOne({ email })
-
+        
         if (!membro) {
             membro = await Membro.create({ nome, sobreNome, email, senha })
+            return res.json(membro)
         }
-
-        console.log(membro)
-        return res.json(membro)
+        return false;
+        
     },
 
     index(req, res) {
