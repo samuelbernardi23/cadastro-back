@@ -3,17 +3,18 @@ const Membro = require('../models/Membros');
 module.exports = {
     async store(req, res) {
 
-        const { nome } = req.headers;
-        const { idade } = req.headers;
-        const { email } = req.headers;
+        const { nome } = req.body;
+        const { idade } = req.body;
+        const { email } = req.body;
 
 
         const membro = await Membro.create({ nome, idade, email })
 
+        console.log(membro)
         return res.json(membro)
     },
 
-    async index(req,res){
-        res.send('<h1>Hello World</h1>')
+    index(req,res){
+        return res.json({nome:"samuel"})
     }
 }
