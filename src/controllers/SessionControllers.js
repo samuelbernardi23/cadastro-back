@@ -9,9 +9,9 @@ module.exports = {
         const resposta = await Membro.findOne({ email })
 
         if(!!resposta && senha === resposta.senha){
-            return res.json({resposta:"sucesso"})
+            return res.json(resposta)
         }else{
-            return res.json({resposta:"fracasso"})
+            return res.json({resposta:false})
         }
 
         // console.log(resposta)
